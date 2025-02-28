@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery</title>
+    <meta name="view-transition" content="same-origin">
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'CSS/gallery.css'%}">
+    <link rel="stylesheet" href="{% static 'CSS/menu.css'%}">
+    <link rel="stylesheet" href="{% static 'CSS/gallery.css'%}">
+    <script  type="text/js" src="{% static 'JS/menu.js'%}"></script>
+    <script  type="text/js" src="{% static 'JS/gallery.js'%}"></script>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li class="logo"><img src="{% static 'images/f1_logo.svg' %}" alt="Formula 1 Logo" class="navbar-logo"></li>
+                <li class="items"><a href="{% url 'home' %}">Home</a></li>
+                <li class="items"><a href="{% url 'about' %}">About us</a></li>
+                <li class="items"><a href="{% url 'form' %}">Form</a></li>
+                <li class="items"><a href="{% url 'gallery' %}">Gallery</a></li>
+                <li class="items"><a href="{% url 'chatbot' %}">Chatbot</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+    {% block content %}
+    <div class="slider">
+        <div class="slides">
+            <img src="{% static 'images/gallery1.webp' %}" alt="f1 cars">
+            <img src="{% static 'images/gallery2.webp' %}" alt="f1 cars">
+            <img src="{% static 'images/gallery3.webp' %}" alt="f1 cars">
+        </div>
+        <button class="prev" onclick="prevSlide()">&#10094;</button>
+        <button class="next" onclick="nextSlide()">&#10095;</button>
+    </div>
+    {% endblock %}
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Dania</p>
+        </div>
+    </footer>
+
+</body>
+</html>

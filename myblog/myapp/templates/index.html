@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formula 1</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <meta name="view-transition" content="same-origin">
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'CSS/index.css'%}">
+    <link rel="stylesheet" href="{% static 'CSS/menu.css'%}">
+    <link rel="stylesheet" href="{% static 'CSS/index.css'%}">
+    <script  type="text/js" src="{% static 'JS/menu.js'%}"></script>
+    <script  type="text/js" src="{% static 'JS/index.js'%}"></script>
+    <script  type="text/js" src="{% static 'JS/index_SearchPosts.js'%}"></script>
+    <script  type="text/js" src="{% static 'JS/index_BackToTop.js'%}"></script>
+    <link rel="stylesheet" href="{% static 'CSS/index_BackToTop.css'%}">
+    <link rel="stylesheet" href="{% static 'CSS/index_SearchPosts.css'%}">
+</head>
+
+<body>
+
+    <header>
+
+        <nav>
+            <ul>
+                <li class="logo"><img src="{% static 'images/f1_logo.svg' %}" alt="Formula 1 Logo" class="navbar-logo"></li>
+                <li class="items"><a href="{% url 'home' %}">Home</a></li>
+                <li class="items"><a href="{% url 'about' %}">About us</a></li>
+                <li class="items"><a href="{% url 'form' %}">Form</a></li>
+                <li class="items"><a href="{% url 'gallery' %}">Gallery</a></li>
+                <li class="items"><a href="{% url 'chatbot' %}">Chatbot</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+    {% block content %}
+        <div class="container">
+            <div id="searchContainer">
+                <input type="text" id="searchInput" placeholder="Search posts...">
+                <button id="searchButton" onclick="searchPosts()">Search</button>
+            </div>
+            <article>
+                <h2>Formula One Overview</h2>
+                <p>Commonly known as Formula 1 or F1, is the highest class of international racing for open-wheel
+                    single-seater formula racing cars sanctioned by the Fédération Internationale de l'Automobile (FIA).
+                    The FIA Formula One World Championship has been one of the premier forms of racing around the world
+                    since its inaugural season in 1950. The word formula in the name refers to the set of rules to
+                    which all participants' cars must conform. A Formula One season consists of a series of races, known
+                    as Grands Prix, which occur globally on both specially-crafted tracks and public roads.</p>
+                <img src="{% static 'images/home1.jpg' %}" alt="F1 cars racing">
+            </article>
+            <article>
+                <h2>Technology and Innovation</h2>
+                <p>Innovation in Formula 1 has led to the development of some of the most advanced automotive technologies.
+                   Key innovations include hybrid engines, advanced aerodynamics, and sophisticated data analytics that
+                   teams use to optimize performance and strategy during races. These technological advancements not only
+                   improve the competitiveness of the races but also contribute to safer and more sustainable vehicle
+                   designs in the automotive industry.</p>
+            </article>
+            <article>
+                <h2>Iconic Races</h2>
+                <p>The Monaco Grand Prix, the Italian Grand Prix at Monza, and the British Grand Prix at Silverstone are among
+                   the most iconic races in the Formula 1 calendar. Each track has its unique characteristics and history,
+                   making them fan favorites worldwide. These events are more than just races; they are a spectacle of speed,
+                   precision, and engineering excellence, celebrated with pomp and grandeur by fans from all corners of the globe.</p>
+            </article>
+            <article>
+                <h2>Latest News</h2>
+                <p>Stay updated with the latest news and developments in the world of Formula 1. From race results and technological
+                   breakthroughs to team announcements and driver updates, find all the essential information here.</p>
+                <ul>
+                    <li><a href="https://www.reuters.com/sports/motor-sports/six-out-six-red-bull-verstappen-wins-monaco-2023-05-28/#:~:text=MONACO%2C%20May%2028%20(Reuters),as%20many%20races%20this%20season.">Max Verstappen Clinches Victory at Monaco Grand Prix</a></li>
+                    <li><a href="https://www.astonmartin.com/en/our-world/news/2024/2/12/aston-martin-unveils-three-new-jewels-in-the-crown-of-high-performance" target="_blank">Aston Martin Unveils Revolutionary Car Design for 2024 Season</a></li>
+                    <li><a href="#">FIA Implements Stricter Safety Regulations Following Monaco Incident</a></li>
+                    <li><a href="#">Alpine Confirms New Driver Lineup for 2024 Championship</a></li>
+                    <li><a href="#">Ferrari Unveils Groundbreaking Engine Upgrade Plans</a></li>
+                    <li><a href="#">McLaren Introduces Cutting-Edge Aero Package for Improved Performance</a></li>
+                    <li><a href="#">Haas F1 Team Announces Exciting Partnership with Tech Giant</a></li>
+                    <li><a href="#">Red Bull Racing's Technical Director Resigns Amidst Team Restructuring</a></li>
+                </ul>
+            </article>
+            <article>
+                <h2>Teams and Drivers</h2>
+                <p>Explore the elite teams competing in the Formula 1 World Championship. Each team, from Ferrari to Mercedes, and from Red Bull Racing to McLaren, boasts a roster of exceptional talent including world-renowned drivers. Learn more about the dynamics of team strategies, driver profiles, and what makes each team unique in their pursuit of championship glory.</p>
+            </article>
+            <article>
+                <h2>The Science of F1 Racing</h2>
+                <p>Formula 1 is not just about speed; it's about precision engineering and advanced science. This article delves into the sophisticated world of F1 technology—exploring everything from the design and function of modern power units to the aerodynamic principles that allow these cars to race at breathtaking speeds while maintaining ground traction on tight corners.</p>
+            </article>
+            <article>
+                <h2>F1 Historical Milestones</h2>
+                <p>From its inception in 1950, Formula 1 has been the pinnacle of auto racing. This retrospective explores significant milestones in the sport’s history, including legendary drivers, landmark technological innovations, and unforgettable races that have collectively shaped what F1 is today.</p>
+            </article>
+            <article>
+                <h2>Fan Engagement and Events</h2>
+                <p>Formula 1 extends beyond the track with a variety of fan engagement events around the globe. Discover how you can participate in meet-and-greets, pit lane walks, and other exclusive events that bring fans closer to the action. Learn about the F1 Esports Series and how virtual racing has become part of the F1 culture.</p>
+            </article>
+            <article>
+                <h2>Sustainability in Formula 1</h2>
+                <p>As the world moves towards a more sustainable future, Formula 1 is also taking significant strides in reducing its environmental impact. This piece highlights the sport’s commitment to sustainability, focusing on initiatives like the transition to sustainable fuel, reducing carbon footprints, and promoting eco-friendly practices within the F1 community.</p>
+            </article>
+        </div>
+        <button onclick="scrollToTop()" id="scrollToTopBtn" title="Go to top">Back to Top</button>
+
+    {% endblock %}
+    </main>
+    
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Dania</p>
+        </div>
+    </footer>
+
+</body>
+
+</html>

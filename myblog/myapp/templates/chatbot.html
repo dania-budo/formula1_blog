@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formula 1</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <meta name="view-transition" content="same-origin">
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'CSS/chatbot.css'%}">
+    <link rel="stylesheet" href="{% static 'CSS/menu.css'%}">
+    <link rel="stylesheet" href="{% static 'CSS/chatbot.css'%}">
+    <script  type="text/js" src="{% static 'JS/menu.js'%}"></script>
+    <script  type="text/js" src="{% static 'JS/chatbot.js'%}"></script>
+</head>
+<body>
+<header>
+    <nav>
+        <ul>
+            <li class="logo"><img src="{% static 'images/f1_logo.svg' %}" alt="Formula 1 Logo" class="navbar-logo"></li>
+                <li class="items"><a href="{% url 'home' %}">Home</a></li>
+                <li class="items"><a href="{% url 'about' %}">About us</a></li>
+                <li class="items"><a href="{% url 'form' %}">Form</a></li>
+                <li class="items"><a href="{% url 'gallery' %}">Gallery</a></li>
+                <li class="items"><a href="{% url 'chatbot' %}">Chatbot</a></li>
+        </ul>
+    </nav>
+</header>
+<main>
+    {% block content %}
+    <div class="wrapper">
+        <div class="chat-container" id="chat-container"></div>
+        <form id="chat-form">
+            <input type="text" id="user-input" placeholder="Type your answer here...">
+            <button type="submit">Send</button>
+        </form>
+    </div>
+    {% endblock %}
+</main>
+<footer>
+    <div class="container">
+        <p>&copy; 2024 Dania</p>
+    </div>
+</footer>
+<script src="JS/form.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
+<script src="JS/chatbot.js"></script>
+</body>
+</html>
